@@ -16,4 +16,6 @@ define(function (require) {
 
     //Say Goodbye to the user
     parent.goodbye("Mr. Developer");
+
+    $('body').append("<div>I have been appended by Jquery</div>");;
 });

@@ -14,12 +14,19 @@ requirejs.config({
     paths: {
     		//Note here that this path is relative to baseUrl i.e. js/vendor
         app: '../app',		//Application path =	js/lib + ../app = js/app folder
+        jquerylatest: 'jquery2.1.4',
         backbone: 'backbone1.2.3',
         underscore: 'underscore1.8.3',
         alias: 'actual/file/path'	//Given path does not exist but it won't throw error since we are not trying to use this alias in code.
 
     },
 
+    //Remember: only use shim config for non-AMD scripts,
+    //scripts that do not already call define(). The shim
+    //config will not work correctly if used on AMD scripts,
+    //in particular, the exports and init config will not
+    //be triggered, and the deps config will be confusing
+    //for those cases.
     // Sets the configuration for your third party scripts that are not AMD compatible
     shim: {
     		"module": ["dependency1", "dependency2"],
@@ -30,6 +37,12 @@ requirejs.config({
             // Exports the global window.Backbone object
             "exports":"Backbone"
         },
+    },
+
+    map: {
+        '*': {
+            'jquery': 'jquerylatest'
+        }
     }
 });
 
