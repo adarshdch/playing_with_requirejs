@@ -14,8 +14,22 @@ requirejs.config({
     paths: {
     		//Note here that this path is relative to baseUrl i.e. js/vendor
         app: '../app',		//Application path =	js/lib + ../app = js/app folder
+        backbone: 'backbone1.2.3',
+        underscore: 'underscore1.8.3',
         alias: 'actual/file/path'	//Given path does not exist but it won't throw error since we are not trying to use this alias in code.
 
+    },
+
+    // Sets the configuration for your third party scripts that are not AMD compatible
+    shim: {
+    		"module": ["dependency1", "dependency2"],
+        // Backbone
+        "backbone":{
+            // Depends on underscore/lodash and jQuery
+            "deps":["underscore", "jquery"],
+            // Exports the global window.Backbone object
+            "exports":"Backbone"
+        },
     }
 });
 
