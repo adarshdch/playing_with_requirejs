@@ -5,6 +5,13 @@
 // directory.
 requirejs.config({
 
+		// Modules can read that config info by asking for the special dependency "module" and calling module.config().
+		config: {
+        'module': {
+            configKey: 'configValue'
+        }
+    },
+
 		//Base path of the files to be confired in requirejs. Note here that this path is relative to index.html file
     baseUrl: 'js/vendor',
 
