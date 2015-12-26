@@ -13,17 +13,18 @@ requirejs.config({
     },
 
 		//Base path of the files to be confired in requirejs. Note here that this path is relative to index.html file
-    baseUrl: 'js/vendor',
+    baseUrl: 'js',
 
     // 3rd party script alias names (Easier to type "jquery" than "libs/jquery, etc")
     // probably a good idea to keep version numbers in the file names for updates checking
     // These paths are checked when you write like require("alias");
     paths: {
     		//Note here that this path is relative to baseUrl i.e. js/vendor
-        app: '../app',		//Application path =	js/lib + ../app = js/app folder
-        jquerylatest: 'jquery2.1.4',
-        backbone: 'backbone1.2.3',
-        underscore: 'underscore1.8.3',
+        app: 'app',		//Application path =	js + app = js/app folder
+        jquerylatest: 'vendor/jquery2.1.4',
+        backbone: 'vendor/backbone1.2.3',
+        underscore: 'vendor/underscore1.8.3',
+        logger: 'vendor/logger',
         alias: 'actual/file/path'	//Given path does not exist but it won't throw error since we are not trying to use this alias in code.
 
     },
